@@ -24,4 +24,6 @@ def index():
         response = requests.post(languages_url, headers=headers, json=documents)
         languages = response.json()
         idioma_encontrado = languages['documents'][0]['detectedLanguage']['name']            
-    return render_template('007.html',idioma_encontrado = idioma_encontrado)
+        return render_template('007.html',idioma_encontrado = idioma_encontrado)
+    else:
+        return render_template('007.html')
